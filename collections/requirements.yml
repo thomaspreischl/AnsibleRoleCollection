@@ -1,3 +1,4 @@
 # from galaxy
+---
 collections:
   - name: community.vmware.vmware_guest
