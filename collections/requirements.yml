@@ -1,2 +1,3 @@
 # from galaxy
-- src: community.vmware.vmware_guest
+collections:
+  - name: community.vmware.vmware_guest
