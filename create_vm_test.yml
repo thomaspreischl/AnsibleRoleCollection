@@ -1,0 +1,22 @@
+---
+- name: AWX Deploy VM OS Host
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+
+    - name: Create a virtual machine from a template
+      vmware_guest:
+        hostname: "{{ vcsa_hostname }}"
+        username: admpreischl
+        esxi_hostname: "{{ esxi_hostname }}"
+        password: "{{ pwd }}"
+        datacenter: "EDV-BV DEMO"
+        validate_certs: no
+        folder: "{{ vcsa_folder }}"
+        name: "{{ host_hostname }}"
+        state: poweredon
+        disk:
+        - size_gb: "{{ host_disk_size }}"
+          type: "{{ host_disk_type }}"
+          datastore: "{{ esxi_datastore }}"
